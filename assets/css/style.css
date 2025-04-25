@@ -1,0 +1,24 @@
+/* import montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.container{
+    max-width: 1210px !important;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 30px;
+    color: #1f1f1f;
+}
+
+.swiper-button-prev{
+    left: 5px;
+    top: 47%;
+}
+
+.swiper-button-next{
+    right: 5px;
+    top: 47%;
+}
