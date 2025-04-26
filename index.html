@@ -23,12 +23,12 @@
 <body class="font-['montserrat'] text-[#1F1F1F] bg-[#f7f7f7]">
 
     <!-- HEADER LOGO, MAIN MENU & HERO AREA -->
-    <header class="relative bg-[#FFD4D0] pt-10 z-10">
-        <div class="container">
+    <header class="bg-[#FFD4D0] pt-5 md:pt-10">
+        <div class="container relative z-10">
             <!-- RED CIRCLE -->
-            <div class="header-red-circle w-[146px] h-[146px] rounded-full bg-[#FC3314] absolute left-[552px] -top-[60px] -z-10"></div>
+            <div id="header-red-circle" class="w-[146px] h-[146px] rounded-full bg-[#FC3314] absolute left-[27%] -top-[17%] -z-10"></div>
             <!-- HEADER -->
-            <div class="header-menu md:flex md:justify-between md:items-center pb-8">
+            <div class="header-menu flex justify-between items-center pb-8">
                 <!-- LOGO -->
                 <div class="logo">
                     <a href="">
@@ -37,7 +37,7 @@
                 </div>
                 <!-- HEADER / MAIN MENU -->
                 <nav class="header-menu">
-                    <ul class="md:flex md:items-center leading-[23.4px] gap-8">
+                    <ul class="hidden md:flex md:items-center leading-[23.4px] gap-8">
                         <li><a href="./" class="capitalize text-lg font-bold">about</a></li>
                         <li><a href="#" class="capitalize text-lg font-bold">services</a></li>
                         <li><a href="#" class="capitalize text-lg font-bold">portfolio</a></li>
@@ -45,26 +45,54 @@
                     </ul>
                 </nav>
                 <!-- HEADER BUTTON -->
-                <a href="#" class="boxed-btn inline-block bg-black text-white font-bold px-6 py-3 leading-6 capitalize transition-all duration-200 ease-in-out hover:bg-[#fc3314]">let's talk</a>
+                <a href="#" class="hidden boxed-btn md:inline-block bg-black text-white font-bold px-6 py-3 leading-6 capitalize transition-all duration-200 ease-in-out hover:bg-[#fc3314]">let's talk</a>
+
+                <!-- HAMBURGER ICON -->
+                <button id="ham-btn" class="block hamburger focus:outline-none md:hidden">
+                    <span class="hamburger-top"></span>
+                    <span class="hamburger-middle"></span>
+                    <span class="hamburger-bottom"></span>
+                </button>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div class="md:hidden">
+                <ul id="mobile-menu" class="hidden flex-col items-center space-y-4 top-[50px] shadow-md py-8 absolute left-6 right-6 bg-white w-auto z-20">
+                    <li><a href="#" class="capitalize font-medium text-lg transition-all ease-in-out duration-300 hover:text-[#fc3314]">about</a></li>
+                    <li><a href="#" class="capitalize font-medium text-lg transition-all ease-in-out duration-300 hover:text-[#fc3314]">services</a></li>
+                    <li><a href="#" class="capitalize font-medium text-lg transition-all ease-in-out duration-300 hover:text-[#fc3314]">portfoli</a></li>
+                    <li><a href="#" class="capitalize font-medium text-lg transition-all ease-in-out duration-300 hover:text-[#fc3314]">blog</a></li>
+                </ul>
             </div>
 
             <!-- HERO AREA -->
-            <div class="hero-section relative z-10">
-                <div class="flex gap-12">
-                    <div class="hero-content pt-16 pb-20 max-w-[457px]">
-                        <h4 class="text-xl leading-[30px] capitalize">UX designer</h4>
-                        <h1 class="text-5xl font-bold leading-[72px] py-4 capitalize">hi there, i'm <br> <span class="text-[#fc3314]">john smith</span></h1>
-                        <p class="leading-6">Welcome to my portfolio of captivating digital experiences. Explore my work and let's create something extraordinary together.</p>
-                        <div class="hero-btns flex mt-12 gap-5">
+            <div class="hero-section relative z-10 overflow-hidden px-4 md:px-6 lg:px-0">
+                <div class="flex flex-col lg:flex-row lg:gap-12 relative">
+                    <!-- Hero Content -->
+                    <div class="hero-content pt-8 md:pt-12 lg:pt-16 pb-10 md:pb-16 lg:pb-20 w-full lg:max-w-[457px] z-10">
+                        <h4 class="text-lg md:text-xl leading-[30px] capitalize">UX designer</h4>
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:leading-[60px] lg:leading-[72px] py-3 md:py-4 capitalize">
+                            hi there, i'm 
+                            <span class="lg:block text-[#fc3314]">john smith</span>
+                        </h1>
+                        <p class="leading-6 text-sm md:text-base">
+                            Welcome to my portfolio of captivating digital experiences. Explore my work and let's create something extraordinary together.
+                        </p>
+                        <div class="hero-btns flex flex-col sm:flex-row mt-8 md:mt-10 lg:mt-12 gap-4 md:gap-5">
                             <!-- BTN HIRE ME -->
-                            <a href="#" class="boxed-btn inline-block bg-black text-white font-bold px-[56px] py-3 leading-6 capitalize transition-all duration-200 ease-in-out hover:bg-[#fc3314]">hire me</a>
+                            <a href="#" class="boxed-btn inline-block bg-black text-white font-bold px-6 md:px-[56px] py-3 leading-6 capitalize transition-all duration-200 ease-in-out hover:bg-[#fc3314] text-center">
+                                hire me
+                            </a>
                             <!-- BTN PORTFOLIO -->
-                            <a href="#" class="borderd-btn inline-block border border-[#1f1f1f] font-bold py-[11px] px-[51px] capitalize transition-all duration-200 ease-in-out hover:bg-black hover:text-white">portfolio</a>
+                            <a href="#" class="borderd-btn inline-block border border-[#1f1f1f] font-bold py-[11px] px-6 md:px-[51px] capitalize transition-all duration-200 ease-in-out hover:bg-black hover:text-white text-center">
+                                portfolio
+                            </a>
                         </div>
                     </div>
 
-                    <div class="hero-banner absolute right-0 bottom-0">
-                        <img src="./assets/img/banner.webp" alt="">
+                    <!-- Hero Banner -->
+                    <div class="hero-banner w-full lg:w-auto lg:absolute lg:right-0 lg:bottom-0 mt-6 lg:mt-0">
+                        <img src="./assets/img/banner.webp" alt="John Smith UX Designer" class="w-full h-auto max-h-[450px] lg:max-h-none object-cover lg:object-contain">
                     </div>
                 </div>
             </div>
@@ -72,65 +100,68 @@
     </header>
 
     <!-- ABOUT ME -->
-    <section class="section-about bg-[#1f1f1f] pt-[75px] pb-20 px-16 relative z-10">
-        <div class="container">
+    <section class="section-about bg-[#1f1f1f] pt-12 md:pt-16 lg:pt-[75px] pb-12 md:pb-16 lg:pb-20 px-4 md:px-8 lg:px-16 relative z-10 overflow-hidden">
+        <div class="container mx-auto">
             <div class="text-center max-w-[810px] mx-auto">
-                <h2 class="mb-6 capitalize font-bold leading-[54px] text-white text-4xl">about me</h2>
-                <p class="text-white leading-6">I'm John Smith, a UI/UX designer dedicated to crafting intuitive and visually stunning digital experiences. With a passion for user-centric design, I transform ideas into functional and beautiful interfaces. Let's collaborate and shape the future of design together.</p>
+                <h2 class="mb-4 md:mb-6 capitalize font-bold leading-tight md:leading-[54px] text-white text-3xl md:text-4xl">about me</h2>
+                <p class="text-white leading-6 text-sm md:text-base">I'm John Smith, a UI/UX designer dedicated to crafting intuitive and visually stunning digital experiences. With a passion for user-centric design, I transform ideas into functional and beautiful interfaces. Let's collaborate and shape the
+                    future of design together.</p>
             </div>
-            <div id="achievements" class="flex justify-center items-start gap-16 mt-[30px] max-w-[1064px] mx-auto">
+            <div id="achievements" class="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-8 md:gap-12 lg:gap-16 mt-8 md:mt-[30px] max-w-[1064px] mx-auto">
                 <!-- BOX ONE -->
-                <div class="flex flex-col flex-1 flex-shrink-0 basis-0 items-center">
-                    <h2 class="text-[#ffd4d0] text-[64px] font-bold leading-[96px]">502</h2>
-                    <p class="text-lg font-bold text-white capitalize">projects done</p>
+                <div class="flex flex-col items-center w-full sm:flex-1 sm:flex-shrink-0 sm:basis-0 mb-6 sm:mb-0">
+                    <h2 class="text-[#ffd4d0] text-5xl md:text-6xl lg:text-[64px] font-bold leading-tight md:leading-[96px]">502</h2>
+                    <p class="text-base md:text-lg font-bold text-white capitalize">projects done</p>
                 </div>
                 <!-- BOX TWO -->
-                <div class="flex flex-col flex-1 flex-shrink-0 basis-0 items-center">
-                    <h2 class="text-[#ffd4d0] text-[64px] font-bold leading-[96px]">10+</h2>
-                    <p class="text-lg font-bold text-white capitalize">Years of Experience</p>
+                <div class="flex flex-col items-center w-full sm:flex-1 sm:flex-shrink-0 sm:basis-0 mb-6 sm:mb-0">
+                    <h2 class="text-[#ffd4d0] text-5xl md:text-6xl lg:text-[64px] font-bold leading-tight md:leading-[96px]">10+</h2>
+                    <p class="text-base md:text-lg font-bold text-white capitalize">Years of Experience</p>
                 </div>
                 <!-- BOX THREE -->
-                <div class="flex flex-col flex-1 flex-shrink-0 basis-0 items-center">
-                    <h2 class="text-[#ffd4d0] text-[64px] font-bold leading-[96px]">273+</h2>
-                    <p class="text-lg font-bold text-white capitalize">clients served</p>
+                <div class="flex flex-col items-center w-full sm:flex-1 sm:flex-shrink-0 sm:basis-0">
+                    <h2 class="text-[#ffd4d0] text-5xl md:text-6xl lg:text-[64px] font-bold leading-tight md:leading-[96px]">273+</h2>
+                    <p class="text-base md:text-lg font-bold text-white capitalize">clients served</p>
                 </div>
             </div>
         </div>
-        <!-- RED CIRCLE -->
-        <div class="absolute left-[718px] -bottom-[183px] h-[234px] w-[234px] bg-[#fc3314] rounded-full -z-10"></div>
+        <!-- RED CIRCLE - responsive positioning -->
+        <div class="absolute w-[120px] h-[120px] md:w-[180px] md:h-[180px] lg:w-[234px] lg:h-[234px] bg-[#fc3314] rounded-full -z-10 right-[-60px] md:right-auto md:left-[50%] lg:left-[718px] bottom-[-60px] md:bottom-[-90px] lg:bottom-[-183px]"></div>
     </section>
 
     <!-- SERVICES -->
-    <section class="service-section bg-white py-16 relative z-20">
+    <section class="service-section bg-white py-8 md:py-12 lg:py-16 relative z-20 px-4 md:px-6 lg:px-0">
         <div class="container">
             <div class="text-center md:max-w-[810px] mx-auto">
-                <h2 class="text-4xl font-bold mb-6 capitalize leading-[54px]">Services</h2>
-                <p class="leading-6 text-[#1f1f1f]">Explore my design services, from user interface and experience to prototyping and testing. Let's craft exceptional digital experiences together.</p>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-8 mt-2 capitalize leading-tight md:leading-[54px]">Services</h2>
+                <p class="leading-6 text-[#1f1f1f] text-sm md:text-base">Explore my design services, from user interface and experience to prototyping and testing. Let's craft exceptional digital experiences together.</p>
             </div>
-
+    
             <!-- SERVICE BOXES -->
-            <div class="flex gap-8 items-center mt-8">
+            <div class="flex flex-col sm:flex-wrap sm:flex-row md:flex-nowrap gap-6 md:gap-8 items-stretch mt-6 md:mt-8">
                 <!-- SINGLE SERVICE BOX -->
-                <div class="p-4 flex-1 flex-shrink-0 basis-0">
+                <div class="p-4 sm:w-[calc(50%-12px)] md:w-auto md:flex-1 md:flex-shrink-0 md:basis-0">
                     <svg width="48" height="54" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.9902 11.5605C24.1142 12.5318 24.2521 13.4415 24.4092 14.293C25.0726 17.8899 26.088 20.5771 27.8516 22.5527C29.6275 24.5422 32.0529 25.6895 35.2764 26.4355C36.1882 26.6466 37.1735 26.8254 38.2363 26.9844C37.1735 27.1434 36.1882 27.3241 35.2764 27.5352C32.053 28.2811 29.6275 29.4276 27.8516 31.417C26.0879 33.3927 25.0726 36.0807 24.4092 39.6777C24.2522 40.5287 24.1141 41.4376 23.9902 42.4082C23.8661 41.4374 23.7285 40.5279 23.5713 39.6768C22.9069 36.0798 21.891 33.3926 20.127 31.417C18.3506 29.4276 15.9248 28.2812 12.7012 27.5352C11.7889 27.3241 10.8036 27.1434 9.74023 26.9844C10.8035 26.8254 11.789 26.6466 12.7012 26.4355C15.9249 25.6895 18.3506 24.5421 20.127 22.5527C21.8909 20.5771 22.9069 17.8899 23.5713 14.293C23.7286 13.4415 23.866 12.5318 23.9902 11.5605Z" stroke="#FC3314" stroke-width="2"/>
                     </svg>
-                    <h4 class="font-bold text-lg capitalize my-6 leading-[23.4px]">Design</h4>
+                    <h4 class="font-bold text-lg capitalize my-4 md:my-6 leading-[23.4px]">Design</h4>
                     <p class="text-sm leading-[21px]">I specialize in web development and design, creating visually appealing, user-friendly digital experiences.</p>
                 </div>
+                
                 <!-- SINGLE SERVICE BOX TWO -->
-                <div class="p-4 flex-1 flex-shrink-0 basis-0">
+                <div class="p-4 sm:w-[calc(50%-12px)] md:w-auto md:flex-1 md:flex-shrink-0 md:basis-0">
                     <svg width="88" height="54" viewBox="0 0 88 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="22" cy="27" r="21" stroke="#FC3314" stroke-width="2"/>
                         <circle cx="44" cy="27" r="21" stroke="#FC3314" stroke-width="2"/>
                         <circle cx="66" cy="27" r="21" stroke="#FC3314" stroke-width="2"/>
                     </svg>
                         
-                    <h4 class="font-bold text-lg capitalize my-6 leading-[23.4px]">Branding</h4>
+                    <h4 class="font-bold text-lg capitalize my-4 md:my-6 leading-[23.4px]">Branding</h4>
                     <p class="text-sm leading-[21px]">I'm a branding expert, crafting unique visual identities that tell your story and resonate with your audience.</p>
                 </div>
+                
                 <!-- SINGLE SERVICE BOX THREE -->
-                <div class="p-4 flex-1 flex-shrink-0 basis-0">
+                <div class="p-4 sm:w-[calc(50%-12px)] md:w-auto md:flex-1 md:flex-shrink-0 md:basis-0">
                     <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M31.5004 11.2504H45.0004" stroke="#FC3314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M31.5004 18.0004H38.2504" stroke="#FC3314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -138,11 +169,12 @@
                         <path d="M49.5004 49.5004L45.0004 45.0004" stroke="#FC3314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                         
-                    <h4 class="font-bold text-lg capitalize my-6 leading-[23.4px]">UX Research</h4>
+                    <h4 class="font-bold text-lg capitalize my-4 md:my-6 leading-[23.4px]">UX Research</h4>
                     <p class="text-sm leading-[21px]">"I specialize in user experience research, collaborating on web development, and ensuring user-friendly digital products.</p>
                 </div>
+                
                 <!-- SINGLE SERVICE BOX FOUR -->
-                <div class="p-4 flex-1 flex-shrink-0 basis-0">
+                <div class="p-4 sm:w-[calc(50%-12px)] md:w-auto md:flex-1 md:flex-shrink-0 md:basis-0">
                     <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.2222 39.1111H47.1111" stroke="#FC3314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M22.2222 24.8889H47.1111" stroke="#FC3314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,13 +184,13 @@
                         <path d="M6 39L8 41L14 35" stroke="#FC3314" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                         
-                    <h4 class="font-bold text-lg capitalize my-6 leading-[23.4px]">Usability Testing</h4>
+                    <h4 class="font-bold text-lg capitalize my-4 md:my-6 leading-[23.4px]">Usability Testing</h4>
                     <p class="text-sm leading-[21px]">I perform usability testing and optimize designs websites based on real-user feedback for seamless interactions.</p>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- PORTFOLIO -->
     <section class="portfolio-section">
         <div class="pt-[50px] pb-[142px] bg-[#FFD4D0]">
@@ -171,106 +203,140 @@
             </div>
         </div>
 
-        <div class="portfolio-bottom pb-16">
+        <div class="portfolio-bottom pb-2 md:pb-16">
             <div class="container">
                 <!-- PORTFOLIO ITEMS -->
                 <div class="flex flex-col gap-16 -mt-[100px]">
-                    <div class="flex items-start gap-16">
+                    <div class="flex items-start flex-wrap gap-16">
                         <!-- PORTFOLIO ITEM ONE -->
-                        <div class="">
-                            <img src="./assets/img/port-1.png" alt="PORTFOLIO IMAGE" class="w-full">
+                        <div class="w-full md:w-[calc(50%-32px)] lg:w-[calc(33.333%-42.666px)]">
+                            <a href="#">
+                                <img src="./assets/img/port-1.png" alt="PORTFOLIO IMAGE" class="w-full">
+                            </a>
                             <div class="flex justify-between items-end mt-8">
                                 <div class="flex flex-col gap-4">
-                                    <h4 class="capitalize text-xl font-bold leading-[30px]">educational platform</h4>
+                                    <a href="#" class="capitalize text-xl font-bold leading-[30px]">educational platform</a>
                                     <p class="text-sm">Web Design / Usability Testing</p>
                                 </div>
-                                <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
-                                    <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <a href="#">
+                                    <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
+                                        <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
 
                         <!-- PORTFOLIO ITEM two -->
-                        <div class="">
-                            <img src="./assets/img/port-2.png" alt="PORTFOLIO IMAGE" class="w-full">
+                        <div class="w-full md:w-[calc(50%-32px)] lg:w-[calc(33.333%-42.666px)]">
+                            <a href="#">
+                                <img src="./assets/img/port-2.png" alt="PORTFOLIO IMAGE" class="w-full">
+                            </a>
                             <div class="flex justify-between items-end mt-8">
                                 <div class="flex flex-col gap-4">
-                                    <h4 class="capitalize text-xl font-bold leading-[30px]">Travel App Desi gn</h4>
+                                    <a href="#">
+                                        <h4 class="capitalize text-xl font-bold leading-[30px]">Travel App Desi gn</h4>
+                                    </a>
                                     <p class="text-sm">UX Research / App Design </p>
                                 </div>
-                                <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
-                                    <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <a href="#">
+                                    <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
+                                        <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
 
                         <!-- PORTFOLIO ITEM THREE -->
-                        <div class="">
-                            <img src="./assets/img/port-3.png" alt="PORTFOLIO IMAGE" class="w-full">
+                        <div class="w-full md:w-[calc(50%-32px)] lg:w-[calc(33.333%-42.666px)]">
+                            <a href="#">
+                                <img src="./assets/img/port-3.png" alt="PORTFOLIO IMAGE" class="w-full">
+                            </a>
                             <div class="flex justify-between items-end mt-8">
                                 <div class="flex flex-col gap-4">
-                                    <h4 class="capitalize text-xl font-bold leading-[30px]">Personal Page</h4>
+                                    <a href="#">
+                                        <h4 class="capitalize text-xl font-bold leading-[30px]">Personal Page</h4>
+                                    </a>
                                     <p class="text-sm">Web Design</p>
                                 </div>
-                                <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a href="#">
+                                    <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
                                     <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
 
-                    <div class="flex items-start gap-16">
+                    <!-- <div class="flex items-start gap-16"> -->
                         <!-- PORTFOLIO ITEM FOUR -->
-                        <div class="">
-                            <img src="./assets/img/port-4.png" alt="PORTFOLIO IMAGE" class="w-full">
+                        <div class="w-full md:w-[calc(50%-32px)] lg:w-[calc(33.333%-42.666px)]">
+                            <a href="#">
+                                <img src="./assets/img/port-4.png" alt="PORTFOLIO IMAGE" class="w-full">
+                            </a>
                             <div class="flex justify-between items-end mt-8">
                                 <div class="flex flex-col gap-4">
-                                    <h4 class="capitalize text-xl font-bold leading-[30px]">Furniture Mobile App</h4>
+                                    <a href="#">
+                                        <h4 class="capitalize text-xl font-bold leading-[30px]">Furniture Mobile App</h4>
+                                    </a>
                                     <p class="text-sm">App Design </p>
                                 </div>
-                                <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a href="#">
+                                    <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
                                     <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                </a>
                             </div>
                         </div>
 
                         <!-- PORTFOLIO ITEM FIVE -->
-                        <div class="">
-                            <img src="./assets/img/port-5.png" alt="PORTFOLIO IMAGE" class="w-full">
+                        <div class="w-full md:w-[calc(50%-32px)] lg:w-[calc(33.333%-42.666px)]">
+                            <a href="#">
+                                <img src="./assets/img/port-5.png" alt="PORTFOLIO IMAGE" class="w-full">
+                            </a>
                             <div class="flex justify-between items-end mt-8">
                                 <div class="flex flex-col gap-4">
-                                    <h4 class="capitalize text-xl font-bold leading-[30px]">Coffee House Landing Page</h4>
+                                    <a href="#">
+                                        <h4 class="capitalize text-xl font-bold leading-[30px]">Coffee House Landing Page</h4>
+                                    </a>
                                     <p class="text-sm">UX Research / Web Design </p>
                                 </div>
-                                <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a href="#">
+                                    <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
                                     <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                </a>
                             </div>
                         </div>
 
                         <!-- PORTFOLIO ITEM SIX -->
-                        <div class="">
-                            <img src="./assets/img/port-6.png" alt="PORTFOLIO IMAGE" class="w-full">
+                        <div class="w-full md:w-[calc(50%-32px)] lg:w-[calc(33.333%-42.666px)]">
+                            <a href="#">
+                                <img src="./assets/img/port-6.png" alt="PORTFOLIO IMAGE" class="w-full">
+                            </a>
                             <div class="flex justify-between items-end mt-8">
                                 <div class="flex flex-col gap-4">
-                                    <h4 class="capitalize text-xl font-bold leading-[30px]">Home Services Page</h4>
+                                    <a href="#">
+                                        <h4 class="capitalize text-xl font-bold leading-[30px]">Home Services Page</h4>
+                                    </a>
                                     <p class="text-sm">Web Design / Marketing</p>
                                 </div>
-                                <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a href="#">
+                                    <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="37.666" height="37.666" rx="18.833" transform="matrix(-1 0 0 1 37.6666 0.667297)" fill="#FC3314"/>
                                     <path d="M25.4253 11.4962L12.2422 24.6793" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M25.4253 21.1669V11.4962H15.7545" stroke="white" stroke-width="1.41248" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -280,7 +346,7 @@
     </section>
 
     <!-- DESIGN SKILLS -->
-    <section class="py-[90px] bg-[#F7f7f7] relative z-20">
+    <section class="py-8 lg:py-[90px] bg-[#F7f7f7] relative z-30">
         <div class="container">
             <!-- TITLE -->
             <div class="text-center max-w-[810px] mx-auto">
@@ -345,7 +411,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <div class="testimonial-slider pt-[90px] pb-16 relative z-10 bg-[#FFD4D0]">
+    <div class="testimonial-slider pt-[90px] pb-16 relative z-20 bg-[#FFD4D0]">
         <div class="container">
             <div class="swiper">
                 <div class="text-[#1F1F1F] text-[36px] font-bold leading-[54px] font-montserrat text-center mb-8">Testemonials</div>
@@ -391,22 +457,26 @@
         </div>
 
         <!-- RED Circle -->
-        <div class="w-[122px] h-[122px] bg-[#FC3314] rounded-full absolute -z-10 left-[774px] -top-[62px]"></div>
+        <div class="w-[122px] h-[122px] bg-[#FC3314] rounded-full absolute -z-10 left-1/2 transform -translate-x-1/2 -top-[62px]"></div>
     </div>
 
     <!-- DESIGN INSIGHTS -->
-    <section class="design-inspiration bg-[#F7F7F7] py-[90px]">
+    <section class="design-inspiration bg-[#F7F7F7] py-[90px] relative z-20">
         <div class="container">
             <!-- TITLE -->
             <div class="text-center max-w-[810px] mx-auto">
-                <h2 class="mb-4 capitalize font-bold leading-[54px] text-4xl">Design Insights <span class="lowercase">and</span> Inspiration</h2>
-                <p class="leading-6">Discover industry insights, expert tips, and design inspiration. Stay updated with the latest trends in web design and user experience.</p>
+                <h2 class="mb-4 capitalize font-bold leading-[54px] text-4xl">
+                    Design Insights <span class="lowercase">and</span> Inspiration
+                </h2>
+                <p class="leading-6">
+                    Discover industry insights, expert tips, and design inspiration. Stay updated with the latest trends in web design and user experience.
+                </p>
             </div>
-
-            <!-- Design Insights and Inspiration BOXES -->
-            <div class="flex justify-between items-start mt-12 gap-[92px]">
-                <!-- single-inspiration-box ONE -->
-                <div class="single-inspiration-box bg-white flex flex-col items-center gap-8 w-1/3">
+    
+            <!-- BOXES -->
+            <div class="flex flex-wrap justify-center gap-10 lg:gap-[92px] mt-12">
+                <!-- single box -->
+                <div class="single-inspiration-box bg-white flex flex-col items-center gap-8 w-full sm:w-[calc(50%-46px)] lg:w-[calc(33.333%-61.333px)]">
                     <img src="./assets/img/des-1.png" alt="" class="w-full">
                     <div class="flex px-4 pb-4 flex-col justify-between items-start flex-1 basis-0 flex-shrink-0 gap-4">
                         <div class="flex flex-col items-start gap-2">
@@ -417,14 +487,14 @@
                         <div class="flex items-center gap-2">
                             <a href="#" class="font-bold text-xs leading-[18px] capitalize">read more</a>
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.93994 14.1005L10.2866 9.75386C10.7999 9.24053 10.7999 8.40053 10.2866 7.88719L5.93994 3.54053" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>    
+                                <path d="M5.93994 14.1005L10.2866 9.75386C10.7999 9.24053 10.7999 8.40053 10.2866 7.88719L5.93994 3.54053" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                         </div>
                     </div>
                 </div>
-
-                <!-- single-inspiration-box two -->
-                <div class="single-inspiration-box bg-white flex flex-col items-center gap-8 w-1/3">
+    
+                <!-- single box -->
+                <div class="single-inspiration-box bg-white flex flex-col items-center gap-8 w-full sm:w-[calc(50%-46px)] lg:w-[calc(33.333%-61.333px)]">
                     <img src="./assets/img/des-2.png" alt="" class="w-full">
                     <div class="flex px-4 pb-4 flex-col justify-between items-start flex-1 basis-0 flex-shrink-0 gap-4">
                         <div class="flex flex-col items-start gap-2">
@@ -435,14 +505,14 @@
                         <div class="flex items-center gap-2 mt-6">
                             <a href="#" class="font-bold text-xs leading-[18px] capitalize">read more</a>
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.93994 14.1005L10.2866 9.75386C10.7999 9.24053 10.7999 8.40053 10.2866 7.88719L5.93994 3.54053" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>    
+                                <path d="M5.93994 14.1005L10.2866 9.75386C10.7999 9.24053 10.7999 8.40053 10.2866 7.88719L5.93994 3.54053" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                         </div>
                     </div>
                 </div>
-
-                <!-- single-inspiration-box three -->
-                <div class="single-inspiration-box bg-white flex flex-col items-center gap-8 w-1/3">
+    
+                <!-- single box -->
+                <div class="single-inspiration-box bg-white flex flex-col items-center gap-8 w-full sm:w-[calc(50%-46px)] lg:w-[calc(33.333%-61.333px)]">
                     <img src="./assets/img/des-3.png" alt="" class="w-full">
                     <div class="flex px-4 pb-4 flex-col justify-between items-start flex-1 basis-0 flex-shrink-0 gap-4">
                         <div class="flex flex-col items-start gap-2">
@@ -453,54 +523,53 @@
                         <div class="flex items-center gap-2 mt-6">
                             <a href="#" class="font-bold text-xs leading-[18px] capitalize">read more</a>
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.93994 14.1005L10.2866 9.75386C10.7999 9.24053 10.7999 8.40053 10.2866 7.88719L5.93994 3.54053" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>    
+                                <path d="M5.93994 14.1005L10.2866 9.75386C10.7999 9.24053 10.7999 8.40053 10.2866 7.88719L5.93994 3.54053" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                         </div>
                     </div>
                 </div>
+    
             </div>
         </div>
     </section>
 
     <!-- GET IN TOUCH -->
-    <section class="relative bg-[#FFD4D0] py-[124px]">
-        <div class="container">
-            <div class=" overflow-hidden flex justify-start items-start gap-[60px]">
+    <section class="relative z-10 bg-[#FFD4D0] py-12 md:py-20 lg:py-[124px]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-start items-start gap-8 md:gap-10 lg:gap-[60px] relative overflow-hidden">
                 <!-- Left section -->
-                <div class="flex-1 flex flex-col justify-between items-start self-stretch gap-[116px]">
-                    <div class="flex flex-col items-start justify-start gap-[64px] w-full">
+                <div class="w-full lg:flex-1 flex flex-col justify-between items-start self-stretch gap-10 lg:gap-[116px]">
+                    <div class="flex flex-col items-start justify-start gap-8 lg:gap-[64px] w-full">
                         <!-- Header text -->
-                        <div class="flex flex-col items-start justify-start gap-[16px] w-full">
-                            <div class="text-[#1F1F1F] text-[36px] font-bold leading-[54px] font-montserrat break-words">Get in Touch</div>
-                            <div class="text-[#1F1F1F] text-[16px] font-normal leading-[24px] font-montserrat break-words">
+                        <div class="flex flex-col items-start justify-start gap-4 lg:gap-[16px] w-full">
+                            <div class="text-[#1F1F1F] text-2xl md:text-3xl lg:text-[36px] font-bold leading-tight lg:leading-[54px] font-montserrat break-words">Get in Touch</div>
+                            <div class="text-[#1F1F1F] text-base font-normal leading-normal lg:leading-[24px] font-montserrat break-words">
                                 Have a question or a project in mind? I'd love to hear from you. Let's chat and make something amazing together.
                             </div>
                         </div>
 
                         <!-- Contact details -->
-                        <div class="flex flex-col items-start justify-start gap-[32px] w-full">
+                        <div class="flex flex-col items-start justify-start gap-6 md:gap-[32px] w-full">
                             <div class="flex items-start justify-start gap-[16px]">
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20 11.8198H22C22 6.6898 18.127 2.8208 12.99 2.8208V4.8208C17.052 4.8208 20 7.7638 20 11.8198Z" fill="#1F1F1F" />
                                     <path d="M13 8.8208C15.103 8.8208 16 9.7178 16 11.8208H18C18 8.5958 16.225 6.8208 13 6.8208V8.8208ZM16.422 14.2638C16.2299 14.0891 15.9774 13.996 15.7178 14.004C15.4583 14.012 15.212 14.1206 15.031 14.3068L12.638 16.7678C12.062 16.6578 10.904 16.2968 9.71204 15.1078C8.52004 13.9148 8.15904 12.7538 8.05204 12.1818L10.511 9.7878C10.6975 9.60692 10.8062 9.36062 10.8142 9.101C10.8222 8.84139 10.7289 8.58884 10.554 8.3968L6.85904 4.3338C6.68408 4.14115 6.44092 4.0243 6.18119 4.00806C5.92146 3.99181 5.66564 4.07745 5.46804 4.2468L3.29804 6.1078C3.12515 6.28131 3.02196 6.51225 3.00804 6.7568C2.99304 7.0068 2.70704 12.9288 7.29904 17.5228C11.305 21.5278 16.323 21.8208 17.705 21.8208C17.907 21.8208 18.031 21.8148 18.064 21.8128C18.3086 21.7991 18.5394 21.6955 18.712 21.5218L20.572 19.3508C20.7415 19.1533 20.8273 18.8976 20.8113 18.6378C20.7952 18.3781 20.6785 18.1349 20.486 17.9598L16.422 14.2638Z"
                                     fill="#1F1F1F" />
                                 </svg>
-                                <div class="text-[#1F1F1F] text-[16px] font-normal leading-[24px] font-montserrat">+1205 5872 321</div>
+                                <div class="text-[#1F1F1F] text-base font-normal leading-normal lg:leading-[24px] font-montserrat">+1205 5872 321</div>
                             </div>
                             <div class="flex items-start justify-start gap-[16px]">
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22 4.8208H2V20.8208H22V4.8208ZM20 8.8208L12 13.8208L4 8.8208V6.8208L12 11.8208L20 6.8208V8.8208Z" fill="#1F1F1F" fill-opacity="0.85" />
                                 </svg>
-
-                                <div class="text-[#1F1F1F] text-[16px] font-normal leading-[24px] font-montserrat">contact@sarajonesdesign.com</div>
+                                <div class="text-[#1F1F1F] text-base font-normal leading-normal lg:leading-[24px] font-montserrat">contact@sarajonesdesign.com</div>
                             </div>
                             <div class="flex items-start justify-start gap-[16px] w-full">
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 2.3208C9.81276 2.32338 7.71584 3.1934 6.16923 4.74002C4.62261 6.28664 3.75259 8.38356 3.75001 10.5708C3.74739 12.3582 4.33124 14.0971 5.41201 15.5208C5.41201 15.5208 5.63701 15.8171 5.67376 15.8598L12 23.3208L18.3293 15.8561C18.3623 15.8163 18.588 15.5208 18.588 15.5208L18.5888 15.5186C19.669 14.0955 20.2526 12.3574 20.25 10.5708C20.2474 8.38356 19.3774 6.28664 17.8308 4.74002C16.2842 3.1934 14.1873 2.32338 12 2.3208ZM12 13.5708C11.4067 13.5708 10.8266 13.3949 10.3333 13.0652C9.83995 12.7356 9.45543 12.267 9.22837 11.7189C9.00131 11.1707 8.9419 10.5675 9.05765 9.98553C9.17341 9.40359 9.45913 8.86904 9.87869 8.44948C10.2982 8.02992 10.8328 7.7442 11.4147 7.62844C11.9967 7.51269 12.5999 7.5721 13.1481 7.79916C13.6962 8.02622 14.1648 8.41074 14.4944 8.90409C14.8241 9.39744 15 9.97746 15 10.5708C14.999 11.3661 14.6826 12.1286 14.1202 12.691C13.5578 13.2534 12.7954 13.5698 12 13.5708Z"
                                     fill="#1F1F1F" />
                                 </svg>
-
-                                <div class="flex-1 text-[#1F1F1F] text-[16px] font-normal leading-[24px] font-montserrat">
+                                <div class="flex-1 text-[#1F1F1F] text-base font-normal leading-normal lg:leading-[24px] font-montserrat">
                                     1234 Design Street, Creativeville, Webland, Imaginary State, 98765
                                 </div>
                             </div>
@@ -508,28 +577,25 @@
                     </div>
 
                     <!-- Social media links -->
-                    <div class="flex items-center justify-center gap-[24px]">
+                    <div class="flex items-center justify-start lg:justify-center gap-[24px] mb-8 lg:mb-0">
                         <a href="https://twitter.com" target="_blank" class="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full">
                             <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15 2.24625C14.4484 2.48057 13.8481 2.64921 13.2298 2.71489C13.8717 2.33933 14.3525 1.74601 14.5818 1.04625C13.9794 1.39913 13.3195 1.64658 12.6313 1.77761C12.3437 1.47482 11.9958 1.2336 11.6094 1.06899C11.2229 0.904373 10.8062 0.819892 10.3852 0.820808C8.68165 0.820808 7.31162 2.18057 7.31162 3.84921C7.31162 4.08353 7.34046 4.31785 7.38733 4.54329C4.83656 4.41193 2.56159 3.21193 1.04915 1.37465C0.77357 1.83817 0.629156 2.36594 0.630934 2.90306C0.630934 3.95394 1.17354 4.88057 2.00096 5.42554C1.51335 5.40663 1.03715 5.27465 0.611104 5.04033V5.07761C0.611104 6.54921 1.66747 7.76873 3.07535 8.04921C2.81101 8.11682 2.53907 8.15141 2.26595 8.15216C2.06586 8.15216 1.87658 8.13264 1.68549 8.10601C2.07487 9.30601 3.20875 10.1776 4.55895 10.206C3.50258 11.0208 2.17943 11.5001 0.742699 11.5001C0.484918 11.5001 0.246966 11.4912 0 11.4628C1.36282 12.3238 2.97981 12.8208 4.72119 12.8208C10.3744 12.8208 13.4677 8.20897 13.4677 4.20601C13.4677 4.07465 13.4677 3.94329 13.4587 3.81193C14.0572 3.38057 14.5818 2.84625 15 2.24625Z"
                                 fill="#1F1F1F" />
                             </svg>
                         </a>
-
                         <a href="https://instagram.com" target="_blank" class="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full">
                             <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.40795 0.865801C5.20773 0.828983 5.46273 0.820801 7.5 0.820801C9.53727 0.820801 9.79227 0.829664 10.5914 0.865801C11.3905 0.901937 11.9359 1.02944 12.4132 1.21421C12.913 1.40307 13.3664 1.6983 13.7414 2.08012C14.1232 2.45444 14.4177 2.90716 14.6059 3.40762C14.7914 3.88489 14.9182 4.43035 14.955 5.22807C14.9918 6.02921 15 6.28421 15 8.3208C15 10.3581 14.9911 10.6131 14.955 11.4128C14.9189 12.2106 14.7914 12.756 14.6059 13.2333C14.4177 13.7338 14.1227 14.1873 13.7414 14.5622C13.3664 14.944 12.913 15.2385 12.4132 15.4267C11.9359 15.6122 11.3905 15.739 10.5927 15.7758C9.79227 15.8126 9.53727 15.8208 7.5 15.8208C5.46273 15.8208 5.20773 15.8119 4.40795 15.7758C3.61023 15.7397 3.06477 15.6122 2.5875 15.4267C2.08699 15.2385 1.63351 14.9435 1.25864 14.5622C0.877077 14.1876 0.581806 13.7344 0.393409 13.234C0.208636 12.7567 0.0818182 12.2113 0.045 11.4135C0.00818181 10.6124 0 10.3574 0 8.3208C0 6.28353 0.00886363 6.02853 0.045 5.22944C0.0811364 4.43035 0.208636 3.88489 0.393409 3.40762C0.582084 2.90722 0.877581 2.45397 1.25932 2.07944C1.63366 1.69796 2.08669 1.40269 2.58682 1.21421C3.06409 1.02944 3.60955 0.902619 4.40727 0.865801H4.40795ZM10.5307 2.2158C9.73977 2.17966 9.5025 2.17216 7.5 2.17216C5.4975 2.17216 5.26023 2.17966 4.46932 2.2158C3.73773 2.24921 3.34091 2.37126 3.07636 2.47421C2.72659 2.61057 2.47636 2.77216 2.21386 3.03466C1.96503 3.27675 1.77353 3.57145 1.65341 3.89716C1.55045 4.16171 1.42841 4.55853 1.395 5.29012C1.35886 6.08103 1.35136 6.3183 1.35136 8.3208C1.35136 10.3233 1.35886 10.5606 1.395 11.3515C1.42841 12.0831 1.55045 12.4799 1.65341 12.7444C1.77341 13.0697 1.965 13.3649 2.21386 13.6069C2.45591 13.8558 2.75114 14.0474 3.07636 14.1674C3.34091 14.2703 3.73773 14.3924 4.46932 14.4258C5.26023 14.4619 5.49682 14.4694 7.5 14.4694C9.50318 14.4694 9.73977 14.4619 10.5307 14.4258C11.2623 14.3924 11.6591 14.2703 11.9236 14.1674C12.2734 14.031 12.5236 13.8694 12.7861 13.6069C13.035 13.3649 13.2266 13.0697 13.3466 12.7444C13.4495 12.4799 13.5716 12.0831 13.605 11.3515C13.6411 10.5606 13.6486 10.3233 13.6486 8.3208C13.6486 6.3183 13.6411 6.08103 13.605 5.29012C13.5716 4.55853 13.4495 4.16171 13.3466 3.89716C13.2102 3.54739 13.0486 3.29716 12.7861 3.03466C12.544 2.78585 12.2493 2.59435 11.9236 2.47421C11.6591 2.37126 11.2623 2.24921 10.5307 2.2158ZM6.54205 10.6328C7.07704 10.8555 7.67276 10.8856 8.22745 10.7179C8.78215 10.5502 9.2614 10.1951 9.58337 9.71324C9.90534 9.23142 10.05 8.65276 9.99276 8.0761C9.93548 7.49944 9.67978 6.96056 9.26932 6.55148C9.00766 6.28999 8.69128 6.08976 8.34295 5.96522C7.99463 5.84067 7.62302 5.79491 7.25488 5.83122C6.88675 5.86753 6.53124 5.98501 6.21396 6.17521C5.89667 6.3654 5.62551 6.62358 5.41998 6.93115C5.21445 7.23873 5.07967 7.58804 5.02535 7.95396C4.97103 8.31987 4.99851 8.69327 5.10582 9.04729C5.21313 9.40131 5.3976 9.72713 5.64595 10.0013C5.89429 10.2755 6.20034 10.4912 6.54205 10.6328ZM4.77409 5.59489C5.13206 5.23692 5.55704 4.95296 6.02475 4.75923C6.49246 4.5655 6.99375 4.46578 7.5 4.46578C8.00625 4.46578 8.50754 4.5655 8.97525 4.75923C9.44296 4.95296 9.86794 5.23692 10.2259 5.59489C10.5839 5.95286 10.8678 6.37784 11.0616 6.84555C11.2553 7.31326 11.355 7.81455 11.355 8.3208C11.355 8.82705 11.2553 9.32834 11.0616 9.79605C10.8678 10.2638 10.5839 10.6887 10.2259 11.0467C9.50295 11.7697 8.52241 12.1758 7.5 12.1758C6.47759 12.1758 5.49705 11.7697 4.77409 11.0467C4.05113 10.3238 3.64498 9.34321 3.64498 8.3208C3.64498 7.29839 4.05113 6.31785 4.77409 5.59489ZM12.21 5.03989C12.2987 4.95621 12.3697 4.85558 12.4188 4.74396C12.468 4.63235 12.4942 4.51201 12.496 4.39007C12.4977 4.26814 12.475 4.14708 12.4292 4.03408C12.3833 3.92108 12.3153 3.81842 12.2291 3.73219C12.1428 3.64596 12.0402 3.57791 11.9272 3.53206C11.8142 3.48622 11.6931 3.46351 11.5712 3.46529C11.4492 3.46707 11.3289 3.49329 11.2173 3.54241C11.1057 3.59153 11.005 3.66255 10.9214 3.75126C10.7586 3.92378 10.6695 4.15293 10.673 4.39007C10.6764 4.62721 10.7722 4.85367 10.9399 5.02138C11.1076 5.18908 11.334 5.28482 11.5712 5.28828C11.8083 5.29173 12.0375 5.20263 12.21 5.03989Z"
                                 fill="#1F1F1F" />
                             </svg>
                         </a>
-
                         <a href="https://dribbble.com" target="_blank" class="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 0.320801C3.875 0.320801 0.5 3.6958 0.5 7.8208C0.5 11.9458 3.875 15.3208 8 15.3208C12.125 15.3208 15.5 11.9458 15.5 7.8208C15.5 3.6958 12.125 0.320801 8 0.320801ZM14.1875 7.4458C12.5625 7.1958 11.125 7.1958 9.75 7.3833C9.625 7.0083 9.4375 6.6958 9.25 6.3208C10.6875 5.6958 11.875 4.8208 12.6875 3.7583C13.5625 4.8208 14.125 6.0708 14.1875 7.4458ZM11.75 2.9458C11 3.9458 9.9375 4.6958 8.625 5.2583C8 4.0708 7.3125 2.9458 6.5 1.8208C7 1.6958 7.5 1.6333 8 1.6333C9.4375 1.6333 10.75 2.1333 11.75 2.9458ZM5.1875 2.3208C6 3.3833 6.75 4.5083 7.375 5.6958C5.875 6.1333 4.0625 6.3208 2 6.3833C2.4375 4.5708 3.625 3.1333 5.1875 2.3208ZM1.8125 7.8208V7.6333C4.1875 7.6333 6.3125 7.3833 8 6.8208C8.125 7.1333 8.3125 7.4458 8.4375 7.6958C6.3125 8.3833 4.5625 9.6958 3.25 11.7583C2.375 10.6958 1.8125 9.3208 1.8125 7.8208ZM4.1875 12.6958C5.4375 10.7583 7 9.5083 8.9375 8.9458C9.5 10.4458 9.9375 12.0083 10.1875 13.6333C8.125 14.3833 5.875 14.0083 4.1875 12.6958ZM11.4375 12.9458C11.1875 11.4458 10.75 10.0083 10.25 8.6333C11.4375 8.4458 12.6875 8.5083 14.125 8.7583C13.8125 10.5083 12.875 12.0083 11.4375 12.9458Z"
                                 fill="#1F1F1F" />
                             </svg>
                         </a>
-
                         <a href="https://facebook.com" target="_blank" class="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full">
                             <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.125 5.3208H0.25V7.8208H2.125V15.3208H5.25V7.8208H7.5L7.75 5.3208H5.25V4.2583C5.25 3.6958 5.375 3.4458 5.9375 3.4458H7.75V0.320801H5.375C3.125 0.320801 2.125 1.3208 2.125 3.1958V5.3208Z" fill="#1F1F1F" />
@@ -539,65 +605,70 @@
                 </div>
 
                 <!-- Right section (form) -->
-                <div class="flex-1 flex flex-col items-start justify-center gap-[32px]">
+                <div class="w-full lg:flex-1 flex flex-col items-start justify-center gap-[32px]">
                     <form action="" class="flex flex-col items-start justify-start gap-[24px] w-full">
-                        <input type="text" class="w-[566px] bg-white px-4 py-[14px] text-sm flex items-center gap-[10px]" placeholder="First name">
-
-                        <input type="email" class="w-[566px] bg-white px-4 py-[14px] text-sm flex items-center gap-[10px]" placeholder="Email">
-
-                        <input type="tel" class="w-[566px] bg-white px-4 py-[14px] text-sm flex items-center gap-[10px]" placeholder="Phone number">
-
+                        <input type="text" class="w-full bg-white px-4 py-[14px] text-sm flex items-center gap-[10px]" placeholder="First name">
+                        <input type="email" class="w-full bg-white px-4 py-[14px] text-sm flex items-center gap-[10px]" placeholder="Email">
+                        <input type="tel" class="w-full bg-white px-4 py-[14px] text-sm flex items-center gap-[10px]" placeholder="Phone number">
                         <textarea class="w-full h-[168px] bg-white px-4 py-[13px] flex items-start gap-[10px] focus:outline-none" placeholder="Your message"></textarea>
-                        <button type="submit" class="bg-[#1F1F1F] px-[56px] py-[12px] flex justify-center items-center gap-[10px] text-white text-[16px] font-bold leading-[24px] mt-3">
+                        <button type="submit" class="bg-[#1F1F1F] px-8 md:px-[56px] py-[12px] flex justify-center items-center gap-[10px] text-white text-base font-bold leading-[24px] mt-3">
                             Send Message
                         </button>
                     </form>
                 </div>
-
-                <!-- Red circle decoration -->
-                <div class="w-[221px] h-[221px] bg-[#FC3314] rounded-full absolute left-[-134px] top-[226.85px]"></div>
             </div>
+            
+            <!-- Red circle decoration - centered at top on mobile, left side on large screens -->
+            <div class="block lg:hidden w-[130px] h-[130px] bg-[#FC3314] rounded-full absolute left-1/2 top-[-65px] transform -translate-x-1/2 -z-10"></div>
+            <div class="hidden lg:block w-[221px] h-[221px] bg-[#FC3314] rounded-full absolute left-[-134px] top-1/2 transform -translate-y-1/2 -z-10"></div>
         </div>
     </section>
 
 
     <!-- FOOTER -->
-    <footer class="bg-[#1F1F1F] py-20 px-[300px]">
+    <footer class="bg-[#1F1F1F] py-10 md:py-20 px-4 md:px-8 lg:px-20">
         <div class="container">
-            <div class="flex flex-col items-center gap-[10px] self-stretch">
-                <div class="flex items-center gap-[120px]">
-                    <div class="flex items-center gap-8">
-                        <a href="#" class="text-white text-xl font-bold leading-[30px] capitalize">about</a>
-                        <a href="#" class="text-white text-xl font-bold leading-[30px] capitalize">services</a>
+            <div class="flex flex-col items-center gap-6 md:gap-10 max-w-[760px] mx-auto">
+                <!-- Navigation links -->
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10 w-full">
+                    <!-- First nav group -->
+                    <div class="flex items-center gap-6 md:gap-8 order-2 md:order-1">
+                        <a href="#" class="text-white text-lg md:text-xl font-bold leading-[30px] capitalize">about</a>
+                        <a href="#" class="text-white text-lg md:text-xl font-bold leading-[30px] capitalize">services</a>
                     </div>
-                    <a href="" class="">
-                        <img src="./assets/img/footer-logo.png" alt="">
+                    
+                    <!-- Logo -->
+                    <a href="" class="order-1 md:order-2 mb-6 md:mb-0 md:mx-auto">
+                        <img src="./assets/img/footer-logo.png" alt="Logo" class="max-w-[150px] md:max-w-full">
                     </a>
-                    <div class="flex items-center gap-8">
-                        <a href="#" class="text-white text-xl font-bold leading-[30px] capitalize">portfolio</a>
-                        <a href="#" class="text-white text-xl font-bold leading-[30px] capitalize">blog</a>
+                    
+                    <!-- Second nav group -->
+                    <div class="flex items-center gap-6 md:gap-8 order-3">
+                        <a href="#" class="text-white text-lg md:text-xl font-bold leading-[30px] capitalize">portfolio</a>
+                        <a href="#" class="text-white text-lg md:text-xl font-bold leading-[30px] capitalize">blog</a>
                     </div>
                 </div>
 
-                <div class="flex flex-col items-center gap-8 mt-14">
-                    <p class="leading-[24px] text-white">Follow me on social media:</p>
-                    <div class="social-links flex items-center gap-8">
-                        <a href="https://www.instagram.com" target="_blank" class="text-white">
+                <!-- Social media section -->
+                <div class="flex flex-col items-center gap-4 md:gap-8 mt-6">
+                    <p class="leading-[24px] text-white text-center">Follow me on social media:</p>
+                    <div class="social-links flex items-center gap-6 md:gap-8">
+                        <a href="https://www.instagram.com" target="_blank" class="text-white hover:opacity-80 transition-opacity">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.3042 3.02016C15.4152 3.02016 15.804 3.02016 17.0679 3.11737C20.2761 3.21459 21.7344 4.77009 21.8316 7.88108C21.9288 9.14493 21.9288 9.43658 21.9288 12.5476C21.9288 15.6586 21.9288 16.0474 21.8316 17.2141C21.7344 20.3251 20.1789 21.8806 17.0679 21.9778C15.804 22.075 15.5124 22.075 12.3042 22.075C9.19317 22.075 8.8043 22.075 7.63768 21.9778C4.42946 21.8806 2.97118 20.3251 2.87397 17.2141C2.77675 15.9502 2.77675 15.6586 2.77675 12.5476C2.77675 9.43658 2.77675 9.04771 2.87397 7.88108C2.97118 4.77009 4.52668 3.21459 7.63768 3.11737C8.8043 3.02016 9.19317 3.02016 12.3042 3.02016ZM12.3042 0.881348C9.09595 0.881348 8.70708 0.881348 7.54046 0.978566C3.26284 1.173 0.929595 3.50625 0.735158 7.78387C0.637939 8.95049 0.637939 9.33936 0.637939 12.5476C0.637939 15.7558 0.637939 16.1447 0.735158 17.3113C0.929595 21.5889 3.26284 23.9221 7.54046 24.1166C8.70708 24.2138 9.09595 24.2138 12.3042 24.2138C15.5124 24.2138 15.9013 24.2138 17.0679 24.1166C21.3455 23.9221 23.6787 21.5889 23.8732 17.3113C23.9704 16.1447 23.9704 15.7558 23.9704 12.5476C23.9704 9.33936 23.9704 8.95049 23.8732 7.78387C23.6787 3.50625 21.3455 1.173 17.0679 0.978566C15.9013 0.881348 15.5124 0.881348 12.3042 0.881348ZM12.3042 6.52002C8.99874 6.52002 6.27662 9.24214 6.27662 12.5476C6.27662 15.853 8.99874 18.5751 12.3042 18.5751C15.6096 18.5751 18.3317 15.853 18.3317 12.5476C18.3317 9.24214 15.6096 6.52002 12.3042 6.52002ZM12.3042 16.4363C10.1654 16.4363 8.41542 14.6864 8.41542 12.5476C8.41542 10.4088 10.1654 8.65883 12.3042 8.65883C14.443 8.65883 16.1929 10.4088 16.1929 12.5476C16.1929 14.6864 14.443 16.4363 12.3042 16.4363ZM18.5262 4.96453C17.7484 4.96453 17.1651 5.54784 17.1651 6.32559C17.1651 7.10334 17.7484 7.68665 18.5262 7.68665C19.3039 7.68665 19.8872 7.10334 19.8872 6.32559C19.8872 5.54784 19.3039 4.96453 18.5262 4.96453Z" fill="white"/>
                             </svg>
                         </a>
-                        <a href="https://www.twitter.com" target="_blank" class="text-white">
+                        <a href="https://www.twitter.com" target="_blank" class="text-white hover:opacity-80 transition-opacity">
                             <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.30825 19.029C17.1133 19.029 21.9286 11.7341 21.9286 5.40867C21.9286 5.20141 21.9243 4.99521 21.9148 4.78981C22.8494 4.11417 23.662 3.27082 24.3029 2.31122C23.4452 2.6923 22.5222 2.94892 21.5538 3.06462C22.5421 2.47204 23.3011 1.53421 23.6591 0.416455C22.734 0.964983 21.7096 1.36357 20.6195 1.57853C19.7456 0.648127 18.5015 0.0661621 17.125 0.0661621C14.4811 0.0661621 12.3371 2.21012 12.3371 4.85271C12.3371 5.22848 12.3793 5.59363 12.4611 5.94419C8.48286 5.74436 4.95498 3.83925 2.59422 0.942957C2.18263 1.65018 1.94565 2.47231 1.94565 3.34884C1.94565 5.00954 2.79086 6.47573 4.07607 7.33369C3.29083 7.30954 2.55309 7.09352 1.90796 6.73474C1.9069 6.75464 1.9069 6.77481 1.9069 6.79577C1.9069 9.11434 3.55726 11.05 5.74739 11.4886C5.34535 11.5982 4.92234 11.6572 4.48554 11.6572C4.17717 11.6572 3.8773 11.6264 3.58566 11.5709C4.19495 13.4726 5.96234 14.8568 8.05773 14.8958C6.41905 16.1799 4.35497 16.945 2.1123 16.945C1.72618 16.945 1.34511 16.923 0.970398 16.8787C3.08888 18.2363 5.60435 19.029 8.30825 19.029Z" fill="white"/>
                             </svg>
                         </a>
-                        <a href="https://www.dribble.com" target="_blank" class="text-white">
+                        <a href="https://www.dribble.com" target="_blank" class="text-white hover:opacity-80 transition-opacity">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.9692 0.881348C5.55278 0.881348 0.302979 6.13115 0.302979 12.5476C0.302979 18.964 5.55278 24.2138 11.9692 24.2138C18.3856 24.2138 23.6354 18.964 23.6354 12.5476C23.6354 6.13115 18.3856 0.881348 11.9692 0.881348ZM21.5938 11.9643C19.0662 11.5754 16.8301 11.5754 14.6913 11.867C14.4969 11.2837 14.2052 10.7976 13.9136 10.2143C16.1496 9.24214 17.9968 7.88108 19.2606 6.22837C20.6217 7.88108 21.4966 9.82545 21.5938 11.9643ZM17.8023 4.96453C16.6357 6.52002 14.983 7.68665 12.9414 8.56161C11.9692 6.71446 10.8998 4.96453 9.63596 3.21459C10.4137 3.02016 11.1915 2.92294 11.9692 2.92294C14.2052 2.92294 16.2468 3.70069 17.8023 4.96453ZM7.59437 3.99234C8.85821 5.64506 10.0248 7.39499 10.997 9.24214C8.66377 9.92267 5.84444 10.2143 2.63622 10.3115C3.31675 7.49221 5.16391 5.25618 7.59437 3.99234ZM2.34457 12.5476V12.2559C6.03887 12.2559 9.34431 11.867 11.9692 10.9921C12.1636 11.4782 12.4553 11.9643 12.6497 12.3531C9.3443 13.4225 6.62218 15.4641 4.5806 18.6723C3.21954 17.0196 2.34457 14.8808 2.34457 12.5476ZM6.03887 20.1306C7.98324 17.1168 10.4137 15.1725 13.4275 14.2975C14.3025 16.6308 14.983 19.0612 15.3719 21.5889C12.1636 22.7555 8.66377 22.1722 6.03887 20.1306ZM17.3162 20.5195C16.9274 18.1863 16.2468 15.9502 15.4691 13.8114C17.3162 13.5198 19.2606 13.617 21.4966 14.0059C21.0105 16.728 19.5523 19.0612 17.3162 20.5195Z" fill="white"/>
                             </svg>
                         </a>
-                        <a href="https://www.facebook.com" target="_blank" class="text-white">
+                        <a href="https://www.facebook.com" target="_blank" class="text-white hover:opacity-80 transition-opacity">
                             <svg width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.81701 9.30533H0.635315V13.5476H3.81701V26.2744H9.11984V13.5476H12.9379L13.3621 9.30533H9.11984V7.50237C9.11984 6.54786 9.33196 6.12363 10.2865 6.12363H13.3621V0.820801H9.33196C5.51392 0.820801 3.81701 2.51771 3.81701 5.69941V9.30533Z" fill="white"/>
                             </svg>
