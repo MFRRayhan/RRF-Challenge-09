@@ -1,7 +1,7 @@
 /* import montserrat font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.container{
+.container {
     max-width: 1210px !important;
     margin: 0 auto !important;
     padding: 0 10px !important;
@@ -13,12 +13,76 @@
     color: #1f1f1f;
 }
 
-.swiper-button-prev{
+.swiper-button-prev {
     left: 5px;
     top: 47%;
 }
 
-.swiper-button-next{
+.swiper-button-next {
     right: 5px;
     top: 47%;
+}
+
+#custom-hero-layout {
+    flex-direction: row;
+}
+#custom-hero-banner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* MOBILE MENU */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+    #header-red-circle {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
 }
