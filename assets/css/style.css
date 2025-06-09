@@ -1,5 +1,5 @@
 /* import montserrat font */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -81,6 +81,10 @@ html {
 
 .open .hamburger-bottom {
     transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+#get-in-touch-socials a:hover svg path {
+    fill: white;
 }
 
 /* Responsive CSS */
